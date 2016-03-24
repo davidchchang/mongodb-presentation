@@ -69,9 +69,61 @@
 			}
 		</style>
 	</section>
+	<section class="slide" id="comparison">
+		<h2>Traditional RDBMS vs MongoDB</h2>
+		<table>
+			<tr>
+				<th>RDBMS</th>
+				<th>MongoDB</th>
+			</tr>
+			<tr>
+				<td>Tables</td>
+				<td>Collections</td>
+			</tr>
+			<tr>
+				<td>Rows</td>
+				<td>JSON documents*</td>
+			</tr>
+			<tr>
+				<td>Indexes</td>
+				<td>Indexes</td>
+			</tr>
+			<tr>
+				<td>Joins</td>
+				<td>Embedding and linking</td>
+			</tr>
+		</table>
+		<p>*Mongo calls these BSON objects</p>
+		<p class="note">Adapted from Sumitkumar Kanoje et al. "Using MongoDB for Social Networking Website" (2015)</p>
+		<style>
+			#comparison .note {
+				font-size: 50%;
+			}
+		</style>
+	</section>
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+		<h2>BSON - Binary JSON</h2>
+		<pre>
+			<code class="mark">Bson:</code>
+			<code>  \x16\x00\x00\x00           <span class="comment">// total document size</span></code>
+  			<code>  <mark>\x02</mark>                       <span class="comment">// 0x02 = type String</span></code>
+  			<code>  <mark>hello</mark>\x00                  <span class="comment">// field name</span></code>
+  			<code>  <mark>\x06\x00\x00\x00world\x00</mark>  <span class="comment">// field value</span></code>
+			<code>                             <span class="comment">// (size of value, value)</span></code>
+			<code>  \x00                       <span class="comment">// 0x00 = type EOO</span></code>
+			<code>                             <span class="comment">// ('end of object')</span></code>
+		</pre>
+	</section>
+	<section class="slide">
+
+	</section>
+	<section class="slide">
+		<h2>MongoDB Disadvantages</h2>
+		<ul>
+			<li></li>
+			<li class="next"></li>
+			<li class="next">Has received funding from US gov't through CIA-sponsored venture capital firm In-Q-Tel</li>
+		</ul>
 	</section>
 	<section class="slide">
 		<h2>Two columns if you like</h2>
