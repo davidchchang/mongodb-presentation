@@ -145,13 +145,11 @@
 		</pre>
 	</section>
 	<section class="slide">
-
-	</section>
-	<section class="slide">
 		<h2>MongoDB Disadvantages</h2>
 		<ul>
-			<li></li>
-			<li class="next"></li>
+			<li>Database sizes tend to be bigger (field names stored)</li>
+			<li class="next">Querying is less flexible without joins</li>
+			<li class="next">Limited transaction support (e.g. sharded clusters)</li>
 			<li class="next">Has received funding from US gov't through CIA-sponsored venture capital firm In-Q-Tel</li>
 		</ul>
 	</section>
@@ -176,6 +174,19 @@
 	</section>
 	<section class="slide">
 		<h2>Live demo: mongo shell</h2>
+	</section>
+	<section class="slide">
+		<h2>MongoDB Best Practices</h2>
+		<ul>
+			<li>Limit number of query results for reduced network traffic<br/>
+				<code style="font-size: 75%;">db.posts.find().sort( { timestamp : -1 } ).limit(10)</code>
+			</li>
+			<li class="next">Return only necessary data with projections<br/>
+				<code style="font-size: 75%;">db.posts.find( {}, { timestamp : 1 , title : 1 , author : 1 , abstract : 1} ).sort( { timestamp : -1 } )</code>
+			</li>
+			<li class="next">Use <code>$inc</code> for incrementing or decrementing</li>
+			<li class="next">Create indexes for improved query response times</li>
+		</ul>
 	</section>
 	<section class="slide" id="back-cover">
 		<h2>Stay tuned for part two:<br>indexing and sharding</h2>
